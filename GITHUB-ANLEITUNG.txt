@@ -1,0 +1,54 @@
+TASARRUF - GIZLILIK POLITIKASI AUF GITHUB (Play Store URL)
+==========================================================
+
+SCHRITT 1 - GitHub anmelden (einmalig)
+--------------------------------------
+In CMD oder PowerShell:
+
+  gh auth login
+
+Antworten:
+  GitHub.com
+  HTTPS
+  Login with a web browser
+
+Browser oeffnet sich -> bei GitHub anmelden -> Code kopieren -> in CMD einfuegen -> Enter
+
+Pruefen:
+
+  gh auth status
+
+Muss "Logged in to github.com" zeigen.
+
+
+SCHRITT 2 - Hochladen
+---------------------
+Zwei getrennte Zeilen (nicht alles in eine Zeile!):
+
+  cd C:\Users\Batu\Desktop\indirimler
+
+  powershell -ExecutionPolicy Bypass -File scripts\push-tasarruf-legal-to-github.ps1
+
+
+SCHRITT 3 - GitHub Pages
+------------------------
+Browser: https://github.com/DEIN-NAME/tasarruf-legal/settings/pages
+  -> Source: GitHub Actions
+
+Actions-Tab -> "Deploy GitHub Pages" gruen abwarten (1-2 Min.)
+
+
+PLAY CONSOLE URL
+----------------
+  https://DEIN-NAME.github.io/tasarruf-legal/gizlilik-politikasi.html
+
+(DEIN-NAME = GitHub-Benutzername)
+
+
+OHNE gh CLI (manuell)
+---------------------
+1. https://github.com/new  -> Name: tasarruf-legal, Public, ohne README
+2. cd C:\Users\Batu\Desktop\indirimler\publish\tasarruf-legal
+3. git remote add origin https://github.com/DEIN-NAME/tasarruf-legal.git
+4. git push -u origin main
+5. Settings -> Pages -> GitHub Actions
